@@ -1,5 +1,5 @@
 /*
-  Date : 2020.05.12
+  Date : 2020.05.19(수정)
   Author : 이유진, 신희태, 김성진, 이영은
   Description : 2030 미용실(switch Example)
   Version : 1.0
@@ -14,9 +14,10 @@ public class ex_example {
   Scanner sc = new Scanner(System.in);
   int num ;
   int num1;
-  
+  int sum=0;
   int price = 0;
-  String  menu = "  ";
+  double avg =0;
+
   String name ="";
   
   System.out.println("2030미용실에 오신 것을 환영합니다.");
@@ -28,37 +29,52 @@ public class ex_example {
   System.out.println("원하는 쌤을 지명하세요. >>> ");
   num1 = sc.nextInt();
   
-  System.out.println("1. 컷트 \t\t2. 펌");  
-  System.out.println("3. 염색\t\t4. 클리닉 \t\t5.헤드스파");
+  System.out.println("1. 컷트\t\t2. 펌\t\t3. 염색\t\t");  
+  System.out.println("4. 클리닉\t\t5. 헤드스파\t6. 선택없음");
   
   System.out.println("메뉴를 선택해 주세요. >>> ");
-  num = sc.nextInt();
+  
+  int cho[] =new int [3];
+  String[] menu =new String[3];
+  for(int i=0; i<cho.length;i++) {
+	  num=sc.nextInt();
+	
+	  
   
   switch(num) {
   case 1 :
-   menu = "컷트";
+   menu[i]  = "컷트";
    price = 15000;
    break;
   case 2 :
-   menu = "펌";
+   menu[i]  = "펌";
    price = 100000;
    break;
   case 3 :
-   menu = "염색";
+   menu[i] = "염색";
    price = 70000;
    break;
   case 4 :
-   menu = "클리닉";
+   menu[i] = "클리닉";
    price = 80000;
    break;
   case 5 :
-   menu = "헤드스파";
+   menu[i] = "헤드스파";
    price = 50000;
    break;
+  case 6 :
+	  menu[i] = "선택없음";
+	  price =0;
+	  break;
   default:
    
    System.out.println("해당 메뉴는 없습니다.");
-   
+  }
+   //
+  
+  cho[i] =num;
+  sum+=price;
+  avg = sum*0.7; 
   }
   switch(num1) {
   case 1 :
@@ -84,8 +100,12 @@ public class ex_example {
 
  {
   System.out.println("선택하신 선생님은  "+ name + "입니다.");
-  System.out.println("선택하신 메뉴는 " + menu);
-  System.out.println("가격은 " + price + "원입니다.");
+  System.out.print("선택하신 메뉴는 ");
+  for(int i=0; i<menu.length; i++) {
+	  System.out.print(menu[i]+" ");
+  }System.out.println();
+  System.out.println("가격은 " + sum + "원입니다.");
+  System.out.println("30% 할인 들어간 금액은" + (int)avg + "원 입니다.");
  }System.out.println("이용해 주셔서 감사합니다.");
 }}
  

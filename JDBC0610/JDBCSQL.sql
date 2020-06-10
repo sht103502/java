@@ -1,0 +1,6 @@
+CREATE TABLE JAVASQL(
+	J_NAME NVARCHAR2(10)
+
+)--여기에는 ;사용하지 말 것
+SELECT *FROM JAVASQL
+--실행[ALT] + [X]

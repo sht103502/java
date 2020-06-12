@@ -165,10 +165,10 @@ public class BankSQL {
   
   try {
    //보내는사람
-   pstmt = con.prepareStatement(sendSql);
-   pstmt.setInt(1, balance);
-   pstmt.setString(2, sendAccount);
-   pstmt.executeUpdate();
+   //pstmt = con.prepareStatement(sendSql);
+   //pstmt.setInt(1, balance);
+   //pstmt.setString(2, sendAccount);
+   //pstmt.executeUpdate();
    
    //받는사람
    pstmt = con.prepareStatement(receiveSql);
